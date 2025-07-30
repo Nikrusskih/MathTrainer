@@ -4,5 +4,7 @@
     <string name="answer">ANSWER</string>
     <string name="TextAnswerIncorrect">Sorry, the answer is incorrect!</string>
     <string name="TextAnswerCorrect">You are right!</string>
-    <string name="input_number">input number:</string>
+    <string name="input_number">input answer:</string>
+    <string name="win_score_0">Win_Score: 0</string>
+    <string name="lose_score_0">Lose_Score: 0</string>
 </resources>

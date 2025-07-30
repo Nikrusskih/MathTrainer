@@ -33,26 +33,39 @@ public class MainActivity extends AppCompatActivity {
         Button buttonAnswer = findViewById(R.id.buttonAnswer); /*кнопка*/
         TextView textViewCorrect = findViewById(R.id.textViewCorrectAnswer); /*правильный ответ*/
         TextView textViewIncorrect = findViewById(R.id.textViewIncorrect); /*неправильный ответ*/
+        TextView textViewCorrectCount = findViewById(R.id.textViewCorrectCount); /*счетчик правильных ответов*/
+        TextView textViewIncorrectCount = findViewById(R.id.textViewIncorrectCount); /*счетчик неправильных ответов*/
 
-//        TextView textViewExample = findViewById(R.id.textViewExample);
+
         getRandomAnswer();
 
 
         buttonAnswer.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
                 String text = editTextAnswer.getText().toString();
-                int number = Integer.parseInt(text);
+                int number;
+                try {
+                    number = Integer.parseInt(text);
+                } catch (NumberFormatException e){
+                    return;
+                }
+
                 if (number == correctAnswer) {
+                    winScore++;
                     textViewCorrect.setVisibility(View.VISIBLE);
                     textViewIncorrect.setVisibility(View.GONE);
+                    textViewCorrectCount.setText("Win_Score: "+ winScore);
 
                     editTextAnswer.setText("");
                     getRandomAnswer();
 
                 } else {
+                    loseScore++;
                     textViewCorrect.setVisibility(View.GONE);
                     textViewIncorrect.setVisibility(View.VISIBLE);
+                    textViewIncorrectCount.setText("Lose_Score: "+loseScore);
 
                     editTextAnswer.setText("");
                     getRandomAnswer();
