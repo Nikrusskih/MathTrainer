@@ -11,7 +11,7 @@
         android:id="@+id/textViewExample"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="140dp"
         android:text="@string/example"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
